@@ -1,0 +1,52 @@
+<form class="row g-3" action=" {% url 'recordapp:new-patient-form' %}" method="POST">
+{% csrf_token %}
+<div class="col-12">
+   {{ patient_form.hospitalNo.label_tag }}
+    {{ patient_form.hospitalNo }}
+  </div>
+  <div class="col-md-6">
+    {{ patient_form.surname.label_tag }}
+    {{ patient_form.surname }}
+  </div>
+  <div class="col-md-6">
+     {{ patient_form.othernames.label_tag }}
+    {{ patient_form.othernames }}
+  </div>
+   <div class="col-md-6">
+    {{ patient_form.data_of_birth.label_tag }}
+    {{ patient_form.data_of_birth }}
+  </div>
+  <div class="col-md-6">
+     {{ patient_form.email.label_tag }}
+    {{ patient_form.email }}
+  </div>
+  
+  <div class="col-md-4">
+    {{ patient_form.phone_number.label_tag }}
+    {{ patient_form.phone_number }}
+  </div>
+  <div class="col-md-4">
+     {{ patient_form.occupation.label_tag }}
+    {{ patient_form.occupation }}
+  </div>
+  <div class="col-md-4">
+     {{ patient_form.sex.label_tag }}
+    {{ patient_form.sex }}
+  </div>
+  <div class="col-md-4">
+     {{ patient_form.state_of_origin.label_tag }}
+    {{ patient_form.state_of_origin }}
+  </div>
+  <div class="col-md-4">
+     {{ patient_form.religion.label_tag }}
+    {{ patient_form.religion }}
+  </div>
+  <div class="col-md-4">
+     {{ patient_form.tribe.label_tag }}
+    {{ patient_form.tribe }}
+  </div>
+ 
+  <div class="col-12">
+    <input type="submit" class="btn btn-primary" value= "Submit">
+  </div>
+</form>
