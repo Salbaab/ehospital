@@ -19,17 +19,12 @@
 
 <div class="card">
   <div class="card-body">
-   {% include 'recordapp/helpers/patient_details_form.html' %}
+  <a href="#">Patient detail added successfully</a>
   </div>
 </div>
      
     </main>
     {% endblock content %}
     {% block javascript %}
-    <script>
-    $('#record a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-        })
-</script>
+    
     {% endblock javascript %}

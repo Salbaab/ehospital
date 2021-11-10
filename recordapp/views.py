@@ -8,13 +8,13 @@ def record_home(request):
     patient_form = Patient_info_form()
     context ={'patient_form':patient_form}
     return render(request, 'recordapp/home.html', context)
-def add_patient(request):
-    
+def add_patient(request): 
     if request.method =="POST":
         patient_form = Patient_info_form(request.POST)
         if patient_form.is_valid():
             patient_form.save()
-        return redirect('recordapp:patient-details')
+            patient_id = request.POST['patient_form']
+        return redirect('recordapp:success')
     else: 
         patient_form = Patient_info_form()    
         context ={'patient_form':patient_form}
@@ -25,5 +25,10 @@ def patient_details(request, pk):
     context = {'patient_details' : patient_details}
     template_name = 'recordapp/pateint_details.html'
     return render(request, template_name, context)
+def success(request):
+    return render(request, 'recordapp/success.html', { })
+    
+        
+        
     
     

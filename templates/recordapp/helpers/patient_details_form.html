@@ -1,6 +1,6 @@
 <form class="row g-3" action=" {% url 'recordapp:new-patient-form' %}" method="POST">
 {% csrf_token %}
-<div class="col-12">
+<div class="col-6">
    {{ patient_form.hospitalNo.label_tag }}
     {{ patient_form.hospitalNo }}
   </div>
@@ -21,27 +21,27 @@
     {{ patient_form.email }}
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-6">
     {{ patient_form.phone_number.label_tag }}
     {{ patient_form.phone_number }}
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
      {{ patient_form.occupation.label_tag }}
     {{ patient_form.occupation }}
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
      {{ patient_form.sex.label_tag }}
     {{ patient_form.sex }}
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
      {{ patient_form.state_of_origin.label_tag }}
     {{ patient_form.state_of_origin }}
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
      {{ patient_form.religion.label_tag }}
     {{ patient_form.religion }}
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
      {{ patient_form.tribe.label_tag }}
     {{ patient_form.tribe }}
   </div>

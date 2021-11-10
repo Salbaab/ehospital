@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Patient_info, patient_pic, Rank, Next_of_kin, Address
+from .models import Patient_info, patient_pic, Rank, Next_of_kin, Address, Unit
 
 # Register your models here.
 class PatientAdmin(admin.ModelAdmin):
@@ -13,3 +13,4 @@ admin.site.register(patient_pic, PatientPic)
 admin.site.register(Rank)
 admin.site.register(Address)
 admin.site.register(Next_of_kin)
+admin.site.register(Unit)

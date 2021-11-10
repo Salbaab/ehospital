@@ -61,3 +61,12 @@ class Next_of_kin(models.Model):
         verbose_name_plural ="Next_of_kin"
     def __self__(self):
         return self.fullName
+class Unit(models.Model):
+    personal_info = models.ForeignKey(Patient_info, on_delete=models.CASCADE)
+    Command = models.CharField(max_length=120, blank=True, null=True)
+    presentUnit = models.TextField(blank=True, null=True)
+    
+    class Meta:
+        verbose_name_plural ="Unit"
+    def __self__(self):
+        return self.presentUnit
