@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'recordapp',
+    #my apps
+    'recordapp.apps.RecordappConfig',
+    'useraccount.apps.UseraccountConfig',
 ]
 
 MIDDLEWARE = [
