@@ -29,7 +29,7 @@ class Patient_info(models.Model):
         return self.surname
 class patient_pic(models.Model):
     personal_info = models.OneToOneField(Patient_info, on_delete=models.CASCADE)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='patients_pic', default='default.jpg')
     class Meta:
         verbose_name_plural ="patient_pic"
 class Rank(models.Model):
@@ -40,7 +40,7 @@ class Rank(models.Model):
         verbose_name_plural ="Rank"
 
 class Address(models.Model):
-    personal_info = models.ForeignKey(Patient_info, on_delete=models.CASCADE)
+    personal_info = models.OneToOneField(Patient_info, on_delete=models.CASCADE)
     street_no = models.CharField(max_length=120, blank=True, null=True)
     street_name = models.CharField(max_length=120, blank=True, null=True)
     state = models.CharField(max_length=120, blank=True, null=True)
@@ -62,7 +62,7 @@ class Next_of_kin(models.Model):
     def __self__(self):
         return self.fullName
 class Unit(models.Model):
-    personal_info = models.ForeignKey(Patient_info, on_delete=models.CASCADE)
+    personal_info = models.OneToOneField(Patient_info, on_delete=models.CASCADE)
     Command = models.CharField(max_length=120, blank=True, null=True)
     presentUnit = models.TextField(blank=True, null=True)
     
