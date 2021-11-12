@@ -14,6 +14,7 @@ def add_patient(request):
         patient_form = Patient_info_form(request.POST)
         if patient_form.is_valid():
             patient=patient_form.save()
+            patient_details = patient[0].id
             rank = Rank(personal_info = patient)
             rank.save()
             address = Address(personal_info = patient)
@@ -24,7 +25,9 @@ def add_patient(request):
             unit.save()
             pic = patient_pic(personal_info = patient)
             pic.save()
-        return redirect('recordapp:success')
+           
+        context = {'patient':patient_form}
+        return render(request, 'recordapp/pateint_details.html', context)
     else: 
         patient_form = Patient_info_form()    
         context ={'patient_form':patient_form}
