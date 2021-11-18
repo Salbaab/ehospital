@@ -13,17 +13,8 @@ def add_patient(request):
     if request.method =="POST":
         patient_form = Patient_info_form(request.POST)
         if patient_form.is_valid():
-            patient=patient_form.save()
-            rank = Rank(personal_info = patient)
-            rank.save()
-            address = Address(personal_info = patient)
-            address.save()
-            nok = Next_of_kin(personal_info = patient)
-            nok.save()
-            unit = Unit(personal_info = patient)
-            unit.save()
-            pic = patient_pic(personal_info = patient)
-            pic.save()
+            patient_form.save()
+            
         return redirect('recordapp:success')
     else: 
         patient_form = Patient_info_form()    
